@@ -13,12 +13,16 @@
         <link href="styles.css" rel="stylesheet">
 
         <title>Spotify Sentence Maker</title>
+
+        <script src=spotify.js></script>
     </head>
 
-    <div class="body">
+     <div class="body">
         <h3>Spotify Sentence Maker</h3>
         <br>
         
-        <input type="text" name="" class="txt" placeholder="Enter your sentence here">
-        <button type="button" name="button" class="btn" id="submit">Submit</button>
+        <form onsubmit="submit();">
+            <input type="text" name="" class="txt" placeholder="Enter your sentence here">
+            <button type="button" name="button" class="btn" id="submit">Submit</button>
+        </form>
     </div>
