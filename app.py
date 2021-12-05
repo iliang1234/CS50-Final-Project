@@ -15,28 +15,29 @@ def songs():
 
         sample_sentence = request.form.get("sentence")
         sentence_list = sample_sentence.split(" ")
-
+        songs = []
         # Print track names that contains each word from the sentence input
         for word in sentence_list:
             results = sp.search(q=word, type="track", limit=1)
             for track in enumerate(results['tracks']['items']):
                 # Print track name and track artist(s) -- holy shit this part took too fucking long
-                artists = (track[1]['artists'])[0]['name']
+                artist = (track[1]['artists'])[0]['name']
                 track_name = track[1]['name']
-                print(track_name + " by " + artists)
-
+                song_info = {"name":track_name, "artist":artist}
+                songs.append(song_info)
+                #print(track_name + " by " + artists)
+        return render_template("playlist.html", songs=songs)
     else:
         return render_template("songs.html")
-
+'''
 @app.route("/artists", methods=["GET", "POST"])
 def artists():
     if request.method == "POST":
         sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="5143c26fbbcd46918a5fa549ce3199d4",
                                                                 client_secret="2f1ac0c2c08a4226a9a88b111b2fa3cf"))
-
+        db.execute("DELETE FROM song")
         sample_sentence = request.form.get("sentence")
         sentence_list = sample_sentence.split(" ")
-
         # Print track names that contains each word from the sentence input
         for word in sentence_list:
             results = sp.search(q=word, type="track", limit=1)
@@ -44,11 +45,12 @@ def artists():
                 # Print track name and track artist(s) -- holy shit this part took too fucking long
                 artists = (track[1]['artists'])[0]['name']
                 track_name = track[1]['name']
-                print(track_name + " by " + artists)
-
+                db.execute("INSERT INTO song VALUES (?, ?)", track_name, artists)
+                #print(track_name + " by " + artists)
+        return render_template("playlist.html", )
     else:
         return render_template("artists.html")
-'''
+
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="5143c26fbbcd46918a5fa549ce3199d4",
                                                            client_secret="2f1ac0c2c08a4226a9a88b111b2fa3cf"))
 
