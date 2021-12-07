@@ -11,7 +11,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 def songs():
     if request.method == "POST":
         sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="5143c26fbbcd46918a5fa549ce3199d4",
-                                                                client_secret="2f1ac0c2c08a4226a9a88b111b2fa3cf"))
+                                                                client_secret="dbe867a6d0b24f0ea59bcb5754dac549"))
 
         sample_sentence = request.form.get("sentence")
         sentence_list = sample_sentence.split(" ")
@@ -33,7 +33,7 @@ def songs():
 def artists():
     if request.method == "POST":
         sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="5143c26fbbcd46918a5fa549ce3199d4",
-                                                                client_secret="2f1ac0c2c08a4226a9a88b111b2fa3cf"))
+                                                                client_secret="dbe867a6d0b24f0ea59bcb5754dac549"))
 
         sample_sentence = request.form.get("sentence")
         sentence_list = sample_sentence.split(" ")
