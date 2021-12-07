@@ -10,14 +10,17 @@
         <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
 
         <!-- https://favicon.io/emoji-favicons/money-bag/ -->
-        <link href="styles.css" rel="stylesheet">
+        <link href="static/styles.css" rel="stylesheet">
 
-        <title>Spotify Sentence Maker</title>
+        <title>Spotify Sentence Maker: {% block title %}{% endblock %}</title>
 
     </head>
 
      <div class="body">
         <h3>Spotify Sentence Maker</h3>
+        <br>
+        <a class="nav-link" href="/">Create playlist based on song titles</a>
+        <a class="nav-link" href="/artists">Create playlist based on artist</a>
         <br>
         {% block main %}{% endblock %}
 

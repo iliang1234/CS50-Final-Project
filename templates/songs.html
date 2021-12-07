@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Songs
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <input type="text" id="sentence" name="sentence" class="txt" placeholder="Enter your sentence here for playlist based on songs">
+
+        <input type="submit" name="button" class="btn" id="submit" value="Submit">
+    </form>
+{% endblock %}
