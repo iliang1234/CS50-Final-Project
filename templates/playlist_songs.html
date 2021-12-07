@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Playlist
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Artist</th>
+                    <th>Song</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for song in songs %}
+                    <tr>
+                        <td>{{ song.artist }}</td>
+                        <td>{{ song.name }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
