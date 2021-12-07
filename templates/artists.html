@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Artist
+{% endblock %}
+
+{% block main %}
+    <form action="/artists" method="post" autocomplete="off">
+        <input type="text" name="sentence" class="txt" style="color: black; background-color: #cfffd7" placeholder="Enter your sentence here for playlist based on artists">
+
+        <input type="submit" name="button" class="btn" id="submit" value="Submit">
+    </form>
+{% endblock %}

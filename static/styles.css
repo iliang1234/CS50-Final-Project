@@ -1,0 +1,40 @@
+footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 75%;
+    color: black;
+  }
+
+.body {
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+    background-color: #89e09a;
+}
+
+.txt {
+    text-align: center;
+    height: 50px;
+    width:500px;
+    font-size:12pt;
+    color: white;
+}
+
+.btn {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    display: block;
+    font-size: 16px;
+    padding: 8px 50px;
+    border: 2px solid black;
+    background: #b0b0b0;
+}
+  
+.btn:hover {
+    background: #000000;
+    color: #1DB954;
+}
