@@ -26,7 +26,7 @@ def songs():
                 song_info = {"name":track_name, "artist":artist}
                 songs.append(song_info)
                 #print(track_name + " by " + artists)
-        return render_template("playlist.html", songs=songs)
+        return render_template("playlist_songs.html", songs=songs)
     else:
         return render_template("songs.html")
 
@@ -38,13 +38,14 @@ def artists():
 
         sample_sentence = request.form.get("sentence")
         sentence_list = sample_sentence.split(" ")
-        songs = []
+        names = []
         # Print track names that contains each word from the sentence input
         for word in sentence_list:
             results = sp.search(q=word, type="artist", limit=1)
             for artist in enumerate(results['artists']['items']):
                 name = artist[1]['name']
-        return render_template("playlist.html", songs=songs)
+                names.append(name)
+        return render_template("playlist_artists.html", names=names)
     else:
         return render_template("artists.html")
 '''
